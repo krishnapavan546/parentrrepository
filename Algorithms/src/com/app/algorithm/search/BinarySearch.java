@@ -1,17 +1,19 @@
 package com.app.algorithm.search;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
+import java.util.List;
+
+import org.apache.log4j.Logger;
 
 public class BinarySearch
 {
-	private Collection collection;
+	
+	Logger logger=Logger.getLogger("log4j.properties");
+	
 
 	int start = 0;
+	
 
 	public int binarySearch(int[] array, int start, int end, int searchValue)
 	{
@@ -41,5 +43,27 @@ public class BinarySearch
 		}
 
 	}
+	public String stringBinarySearch(List<String> stringArray, int start, int end, String searchString)
+	{
+		String foundString=null;
+		for (String string : stringArray)
+		{
+			if(string.contains(searchString))
+			{
+				logger.info("Found String in ArrayList"+searchString);
+				foundString = searchString;
+				
+			}
+			else
+			{
+				logger.info("Not Found String in ArrayList"+searchString);
+				foundString="";
+			}
+		}
+		return foundString;
+				
+
+	}
+	
 
 }

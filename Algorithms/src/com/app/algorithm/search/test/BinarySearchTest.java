@@ -4,6 +4,9 @@ import com.app.algorithm.search.BinarySearch;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,6 +39,15 @@ public class BinarySearchTest
 		int[] array = { 21, 51, 36, 52, 56, 62 };
 		int index=binarySearch.binarySearch(array, 100, array.length, 56);
 		assertNotNull(index);
+	}
+	
+	@Test
+	public void testStringBinarySearch()
+	{
+		String[] array = {"Pavan","kumar","jil","Kodi"};
+		List<String> arrayList = Arrays.asList(array);
+		String StringReceived=binarySearch.stringBinarySearch(arrayList, 0, array.length, "jil");
+		assertNotNull(StringReceived);
 	}
 	
 }
