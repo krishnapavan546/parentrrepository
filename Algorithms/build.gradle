@@ -1,0 +1,27 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "application"
+apply plugin: "maven"
+
+repositories
+{
+	mavenCentral()
+	 maven { url 'https://repo.gradle.org/gradle/libs' }
+	 
+}
+
+
+dependencies
+{
+	compile fileTree(dir:'lib',include:['*.jar'])
+	compile "junit:junit:4.4"
+	compile "io.dropwizard:dropwizard-core:0.7.1"
+	
+}
+
+build
+{
+
+}
+	mainClassName="com.app.algorithm.MainRun"
+	
